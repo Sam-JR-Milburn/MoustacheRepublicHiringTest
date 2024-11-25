@@ -5,9 +5,26 @@ import Image from "next/image";
 import '../../styles/product.css'; // Alignment
 
 // This should probably be more dynamic, like taking the data from the API call.
-function AddCartSection(){
+function AddCartSection(props){
+  var productid = props.productid;
+  function HandleButton(event){
+    event.preventDefault();
+    // Handle Cart JS here.
+    var size = document.getElementById("sizes").value;
+    console.log("Size: "+size); // I work!
+
+    var req = new XMLHttpRequest();
+    req.open('POST', '/cart'); // POST to cart.
+    req.setRequestHeader("Content-Type", "application/json");
+    // Need to implement a Cart POST handler in cart/page.js.
+    req.send(JSON.stringify({ "size": {size}, "productid": AddCartSection.productid }));
+
+  }
+  function HandleSubmit(event){ event.preventDefault(); }
+
   return (
-    <form onSubmit={event.PreventDefault()}>
+    <form id="purchaseitem" method="post" action="/cart"
+      onSubmit={HandleSubmit} onClick={HandleButton}>
       <select name="sizes" id="sizes">
         <option value="S">Small</option>
         <option value="M">Medium</option>
@@ -58,7 +75,7 @@ export default function ProductPage(){
           <div className="productsquare">
             <p>{data ? data.description : "Product Description"}</p>
             <p>Price: {data ? data.price : "Product Price"}</p>
-            <AddCartSection />
+            <AddCartSection productid={data ? data.id : -1}/>
           </div>
         </div>
       </body>
