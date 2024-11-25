@@ -1,0 +1,10 @@
+.productcatalog {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: Left;
+  padding: 4px;
+}
+
+.catalogitem {
+  padding: 4px;
+}

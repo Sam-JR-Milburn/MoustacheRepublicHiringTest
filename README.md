@@ -15,3 +15,8 @@ You must:
 To run, type then enter 'npm run dev' in the terminal in '/moustacherepublic'.
 This will initialise and start the server with default configuration at the web address localhost:3000.
 Enter localhost:3000 in your browser to visit.
+
+## Remarks
+Sorry this took a while, I was on holiday and capping off my 3D Engine, and I've had to teach myself
+a bunch of webdev while doing this, and I realised my node/npm/nvm setup was broken
+so I had to remove them and fully reinstall.
