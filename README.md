@@ -20,3 +20,5 @@ Enter localhost:3000 in your browser to visit.
 Sorry this took a while, I was on holiday and capping off my 3D Engine, and I've had to teach myself
 a bunch of webdev while doing this, and I realised my node/npm/nvm setup was broken
 so I had to remove them and fully reinstall.
+
+Edit Nov 28: Sorry I know this reaches out to your API as fast as possible - I looked for a hook to use that works only on page load, and used the stack overflow suggestion.
